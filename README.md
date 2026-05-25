@@ -7,6 +7,8 @@
 ---
 
 ## Lab Topology
+<img width="786" height="443" alt="image" src="https://github.com/user-attachments/assets/f9dd979f-4644-4b58-b23e-f18c7cb21192" />
+
 
 ![ISE Two Node Deployment Topology](images/topology.png)
 
