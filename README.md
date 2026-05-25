@@ -147,7 +147,8 @@ DNS forward and reverse lookup zones must be configured so ISE nodes can resolve
 
 ### Forward Lookup Zone Entries
 
-![DNS Forward Lookup Zone](images/dns-forward-zone.png)
+![DNS Forward Lookup Zone] <img width="791" height="435" alt="image" src="https://github.com/user-attachments/assets/99c3673e-415d-4173-bac2-7aade4927ef8" />
+
 
 | Record Type | Name | Value |
 |---|---|---|
@@ -156,7 +157,8 @@ DNS forward and reverse lookup zones must be configured so ISE nodes can resolve
 
 ### Reverse Lookup Zone Entries
 
-![DNS Reverse Lookup Zone](images/dns-reverse-zone.png)
+![DNS Reverse Lookup Zone]<img width="741" height="367" alt="image" src="https://github.com/user-attachments/assets/655ceb04-127e-4065-b78c-6a67ea725402" />
+
 
 | Record Type | IP | PTR Record |
 |---|---|---|
