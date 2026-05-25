@@ -167,7 +167,8 @@ DNS forward and reverse lookup zones must be configured so ISE nodes can resolve
 
 ### Verify DNS Resolution — NSLookup
 
-![NSLookup Verification](images/dns-nslookup.png)
+![NSLookup Verification]<img width="387" height="733" alt="image" src="https://github.com/user-attachments/assets/2ed5150f-3d36-4cd0-847f-df39eaaea9a0" />
+
 
 ```bash
 # Run from Windows Server or any domain-joined machine
@@ -190,11 +191,13 @@ The Root CA certificate must be downloaded and imported into **both** ISE nodes 
 http://10.10.10.10/certsrv
 ```
 
-![CA Server Portal](images/ca-server-portal.png)
+![CA Server Portal]<img width="802" height="161" alt="image" src="https://github.com/user-attachments/assets/1950f73a-8a7f-41bc-94dc-93b6ff2fc3c0" />
+
 
 **Step 2:** Click **"Download a CA certificate, certificate chain, or CRL"**
 
-![Download CA Certificate](images/ca-download.png)
+![Download CA Certificate]<img width="582" height="407" alt="image" src="https://github.com/user-attachments/assets/d2f14def-6fca-4afe-9dc1-d153db85b7a4" />
+
 
 **Step 3:** Select **Base 64** encoding → Click **"Download CA Certificate"**
 
@@ -211,15 +214,18 @@ http://10.10.10.10/certsrv
 1. Log in to **ISE-01** GUI: `https://ise-01.hydent.com`
 2. Navigate to **Administration → Deployment**
 
-![ISE Deployment Page](images/ise-deployment.png)
+![ISE Deployment Page]<img width="788" height="330" alt="image" src="https://github.com/user-attachments/assets/088bff8b-e6e2-43ac-abe5-abc3fa68692e" />
+
 
 3. Click on **ISE-01** → Edit General Settings
 
-![Edit ISE Node](images/ise-edit-node.png)
+![Edit ISE Node]<img width="790" height="332" alt="image" src="https://github.com/user-attachments/assets/640af56a-82fb-4016-aa66-1306632ab47a" />
+
 
 4. Click **"Make Primary"** → Click **Save**
 
-![Make Primary](images/ise-make-primary.png)
+![Make Primary]<img width="792" height="332" alt="image" src="https://github.com/user-attachments/assets/53032b19-33f9-4798-b397-99743f3ebbf6" />
+
 
 > ✅ ISE-01 is now the **Primary PAN**
 
@@ -230,7 +236,8 @@ http://10.10.10.10/certsrv
 1. Navigate to **Administration → System → Certificates → Trusted Certificates**
 2. Click **Import**
 
-![Trusted Certificates](images/ise-trusted-cert.png)
+![Trusted Certificates]<img width="788" height="325" alt="image" src="https://github.com/user-attachments/assets/67c84291-213b-49e0-be82-5b2b021ae484" />
+
 
 3. Browse and select `rootca.cer`
 4. Check the following boxes:
@@ -239,11 +246,13 @@ http://10.10.10.10/certsrv
    - ✅ Trust for authentication of Cisco Services
 5. Click **Submit**
 
-![Import Root CA](images/ise-import-rootca.png)
+![Import Root CA]<img width="786" height="331" alt="image" src="https://github.com/user-attachments/assets/c4940b8c-629d-45fd-b003-796f51a0b831" />
+
 
 6. Verify the Root CA appears with the correct expiry date
 
-![CA Imported Successfully](images/ise-ca-imported.png)
+![CA Imported Successfully]<img width="792" height="331" alt="image" src="https://github.com/user-attachments/assets/4794507c-8472-4d63-b2e7-202636af227e" />
+
 
 ---
 
@@ -252,7 +261,8 @@ http://10.10.10.10/certsrv
 1. Navigate to **Administration → System → Certificates → Certificate Signing Requests**
 2. Click **Generate Certificate Signing Requests (CSR)**
 
-![Generate CSR](images/ise-generate-csr.png)
+![Generate CSR]<img width="787" height="328" alt="image" src="https://github.com/user-attachments/assets/655500b6-ca15-4058-9c29-8782ee32b6a7" />
+
 
 3. Fill in the CSR parameters:
 
@@ -269,11 +279,13 @@ http://10.10.10.10/certsrv
 
 > 💡 Using a **wildcard certificate** (`*.hydent.com`) allows the same certificate to cover both ISE nodes and portal FQDNs — saves time vs generating individual certs per node.
 
-![CSR Parameters](images/ise-csr-params.png)
+![CSR Parameters]<img width="786" height="326" alt="image" src="https://github.com/user-attachments/assets/a40a2083-0bc5-43f6-80fd-ae1be62c9c53" />
+
 
 4. Click **Generate** → Click **Export** to download the CSR file
 
-![Export CSR](images/ise-export-csr.png)
+![Export CSR]<img width="785" height="332" alt="image" src="https://github.com/user-attachments/assets/dad1a72b-125c-4578-91fb-f21dbba37262" />
+
 
 ---
 
@@ -282,15 +294,18 @@ http://10.10.10.10/certsrv
 1. Navigate to: `http://10.10.10.10/certsrv`
 2. Click **"Request a certificate"**
 
-![Request Certificate](images/ca-request-cert.png)
+![Request Certificate]<img width="661" height="198" alt="image" src="https://github.com/user-attachments/assets/954c7897-69d1-4388-8b37-99d83e34bcb4" />
+
 
 3. Click **"Advanced certificate request"**
 
-![Advanced Certificate Request](images/ca-advanced-request.png)
+![Advanced Certificate Request]<img width="583" height="142" alt="image" src="https://github.com/user-attachments/assets/72c8674d-b121-46f0-94a6-f8286e00b0b6" />
+
 
 4. Open the downloaded CSR file → Copy its entire content → Paste into the **"Saved Request"** field → Click **Submit**
 
-![Submit CSR](images/ca-submit-csr.png)
+![Submit CSR]<img width="792" height="332" alt="image" src="https://github.com/user-attachments/assets/0708d8f4-fa4b-41c1-b395-a6b400c06eb9" />
+
 
 5. Download the signed certificate (**Base 64 encoded**)
 
@@ -303,7 +318,8 @@ http://10.10.10.10/certsrv
 1. Go back to ISE → **Administration → System → Certificates → Certificate Signing Requests**
 2. Select the CSR entry → Click **Bind Certificate**
 
-![Bind Certificate](images/ise-bind-cert.png)
+![Bind Certificate] <img width="787" height="332" alt="image" src="https://github.com/user-attachments/assets/b3a1f280-724b-4910-8022-22e104672fc2" />
+
 
 3. Browse and upload the signed `.cer` file
 4. Provide a **friendly name** (e.g., `ISE-01-Wildcard-2034`)
@@ -316,11 +332,13 @@ http://10.10.10.10/certsrv
 
 > ⚠️ **ISE services will restart** after binding. This takes 3–5 minutes. Normal behaviour.
 
-![Certificate Bound](images/ise-cert-bound.png)
+![Certificate Bound]<img width="787" height="308" alt="image" src="https://github.com/user-attachments/assets/6ad12bd2-c10b-4fdd-bb68-b61b18f69396" />
+
 
 7. After restart, verify ISE-01 GUI loads with the new signed certificate — browser should show **no certificate warning**
 
-![ISE New Certificate](images/ise-new-cert.png)
+![ISE New Certificate] <img width="788" height="320" alt="image" src="https://github.com/user-attachments/assets/ab9e7605-8314-427e-a967-46e0e518b3a3" />
+
 
 ---
 
@@ -335,7 +353,8 @@ http://10.10.10.10/certsrv
 3. Click **Import** → Upload `rootca.cer`
 4. Check all trust boxes → Click **Submit**
 
-![ISE-02 Import Root CA](images/ise02-import-rootca.png)
+![ISE-02 Import Root CA] <img width="786" height="331" alt="image" src="https://github.com/user-attachments/assets/b9cdb184-1f18-4892-84f6-a1ed45f82aac" />
+
 
 ---
 
@@ -346,7 +365,8 @@ http://10.10.10.10/certsrv
 1. On **ISE-01** → Navigate to **Administration → Deployment**
 2. Click **Register**
 
-![Register Node](images/ise-register.png)
+![Register Node] <img width="783" height="318" alt="image" src="https://github.com/user-attachments/assets/9944cb43-43f0-457a-be8e-7155dc6b46c5" />
+
 
 3. Enter ISE-02 details:
 
@@ -358,11 +378,13 @@ http://10.10.10.10/certsrv
 
 4. Click **Next**
 
-![Register ISE-02](images/ise-register-ise02.png)
+![Register ISE-02] <img width="786" height="322" alt="image" src="https://github.com/user-attachments/assets/9c4e73be-3c88-46a9-ac51-a419935e9641" />
+
 
 5. A popup will appear asking to **import the certificate** — Click **"Import Certificate and Proceed"**
 
-![Import Cert Popup](images/ise-cert-popup.png)
+![Import Cert Popup]<img width="785" height="332" alt="image" src="https://github.com/user-attachments/assets/e6f9a0e4-58d7-444a-87d8-e8429b77e277" />
+
 
 ---
 
@@ -378,7 +400,11 @@ After clicking Next, assign the personas for ISE-02:
 
 > 💡 **Why Primary MnT on ISE-02?** This gives you MnT redundancy — if ISE-01 (Secondary MnT) has an issue, ISE-02 (Primary MnT) continues collecting RADIUS logs without interruption.
 
-![ISE-02 Role Assignment](images/ise02-roles.png)
+![ISE-02 Role Assignment]<img width="786" height="332" alt="image" src="https://github.com/user-attachments/assets/80736aff-47fb-4230-9160-bae13b22a0db" /> <img width="781" height="325" alt="image" src="https://github.com/user-attachments/assets/0c1efd85-a376-4d97-862f-e45d7b52f4e6" /> <img width="788" height="328" alt="image" src="https://github.com/user-attachments/assets/47c6e804-7348-42da-b0c7-dfe9a0691598" />
+<img width="787" height="328" alt="image" src="https://github.com/user-attachments/assets/0abfde0a-baf6-4a00-9f23-c9b07fe8b5bc" />
+
+
+
 
 6. Click **Submit**
 
@@ -388,7 +414,7 @@ After clicking Next, assign the personas for ISE-02:
 
 After submitting, ISE-02 will show **"Registering"** → then **"Syncing"** status. This is normal and takes 5–15 minutes depending on existing policy data.
 
-![Syncing Status](images/ise-syncing.png)
+![Syncing Status]
 
 > ⚠️ Do **not** make any policy changes during sync. Wait until both nodes show **"Connected"**
 
@@ -404,7 +430,8 @@ Once sync completes, both nodes will show **"Connected"** with their respective 
 
 **ISE-02 Final State:**
 
-![ISE-02 Final](images/ise02-final.png)
+![ISE-02 Final]<img width="782" height="313" alt="image" src="https://github.com/user-attachments/assets/bc784dd4-e43d-493d-8676-a3943ea7bfa9" />
+
 
 ---
 
