@@ -10,7 +10,7 @@
 <img width="786" height="443" alt="image" src="https://github.com/user-attachments/assets/f9dd979f-4644-4b58-b23e-f18c7cb21192" />
 
 
-![ISE Two Node Deployment Topology](images/topology.png)
+![ISE Two Node Deployment Topology]
 
 > **Topology Overview:** ISE-01 and ISE-02 are connected via ServerFarm switch alongside the CA/FTP server and AD/DHCP server. A Core switch connects the access layer with MAB and Dot1x test endpoints. FirePower (FTD) handles internet edge. VLANs 10–13 segment traffic across the environment.
 
